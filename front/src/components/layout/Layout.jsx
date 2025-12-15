@@ -1,5 +1,5 @@
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
+import Header from "../Header.jsx";
+import Footer from "../Footer.jsx";
 import { Outlet } from "react-router-dom";
 
 export default function Layout() {
@@ -8,7 +8,9 @@ export default function Layout() {
             <Header />
 
             <main>
-                <Outlet />
+                <div style={{ background: "yellow" }}>
+                    <Outlet />
+                </div>
             </main>
 
             <Footer />
