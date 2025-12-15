@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { getCategories, getTopArtisans } from "../../services/api";
 
+import "../../styles/home.css";
+
 export default function Home() {
     
     const [categories, setCategories] = useState([]);
