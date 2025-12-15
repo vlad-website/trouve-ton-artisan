@@ -1,0 +1,13 @@
+:root {
+    --primary: #0056a8;
+    --primary-light: #e6f1fa;
+
+    --text-dark: #00315c;
+    --text-light: #6b7a8a;
+
+    --bg-light: #f7f9fc;
+
+    --radius: 8px;
+    --shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+}
