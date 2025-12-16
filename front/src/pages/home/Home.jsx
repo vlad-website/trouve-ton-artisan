@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getCategories, getTopArtisans } from "../../services/api";
+import StepsList from "../../components/steps/StepsList";
 
 import "../../styles/home.css";
 
@@ -25,15 +26,8 @@ export default function Home() {
 
     return (
         <div>
-            <h1>Comment trouver mon artisan?</h1>
-
-            <h2>Catégories</h2>
-            <ul>
-                {categories.map(cat => (
-                    <li key={cat.id_categorie}>{cat.nom}</li>
-                ))}
-            </ul>
-
+            <StepsList />
+            
             <h2>Artisans du mois</h2>
             <ul>
                 {topArtisans.map(art => (

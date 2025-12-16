@@ -7,10 +7,8 @@ export default function Layout() {
         <>
             <Header />
 
-            <main>
-                <div style={{ background: "yellow" }}>
+            <main className="layout_main">
                     <Outlet />
-                </div>
             </main>
 
             <Footer />
