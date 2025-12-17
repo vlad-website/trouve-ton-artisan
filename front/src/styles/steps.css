@@ -1,10 +1,13 @@
 .steps {
+    width: 100%;
     margin: 40px 0;
+    display: block;
 }
 
 .steps_container {
     max-width: 900px;
-    margin: 0auto;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .steps_title {
@@ -17,7 +20,7 @@
     gap: 16px;
 
     max-width: 1000px;
-    margin: 0auto;
+    margin: 0 auto;
 }
 
 .step {
