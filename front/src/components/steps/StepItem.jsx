@@ -16,4 +16,3 @@ export default function StepItem({ number, title, text, icon }) {
         </article>
     );
 }
-
