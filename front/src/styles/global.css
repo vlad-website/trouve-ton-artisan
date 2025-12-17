@@ -7,7 +7,7 @@
 body {
     margin: 0;
     font-family: var(--font-main);
-    font-size: var(body-size);
+    font-size: var(--body-size);
     line-height: var(--body-line);
     background: #ffffff;
     color: var(--text-dark);
