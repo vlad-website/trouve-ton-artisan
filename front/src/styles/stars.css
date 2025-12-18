@@ -1,0 +1,43 @@
+.stars {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+}
+
+.star {
+    font-size: 18px;
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+}
+
+.star--full {
+    color: #f5b301;
+}
+
+.star--empty {
+    color: #ddd
+}
+
+.stars_value {
+    margin-left: 6px;
+    font-size: 14px;
+    color: var(--text-gris);
+    font-weight: 500;
+}
+
+.star--half {
+    color: #ddd;
+}
+
+.star--half::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    overflow: hidden;
+    color: #f5b301;
+}
+

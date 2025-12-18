@@ -1,3 +1,5 @@
+import StarRating from "../../components/StarRating";
+
 export default function ArtisanCard({ artisan }) {
     return (
         <article className="artisan-card">
@@ -23,7 +25,7 @@ export default function ArtisanCard({ artisan }) {
                 </p>
 
                 <p className="artisan-card__note">
-                    ⭐ {artisan.note}
+                    <StarRating value={Number(artisan.note)} />
                 </p>
             </div>
         </article>
