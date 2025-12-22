@@ -1,5 +1,5 @@
 .header {
-    background: white;
+    background: var(--primary-light);
     padding: 15px 40px;
     display: flex;
     align-items: center;
