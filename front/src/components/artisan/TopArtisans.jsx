@@ -21,7 +21,7 @@ export default function TopArtisans() {
         <section className="top-artisans">
             <h2 className="top-artisans__title">Les artisans du mois</h2>
 
-            <div className="top-artisans__grid">
+            <div className="top-artisans_grid">
                 {topArtisans.map((art) => (
                     <ArtisanCard
                         key={art.id_artisan}

@@ -35,3 +35,12 @@ small {
   font-size: var(--small-size);
   line-height: var(--small-line);
 }
+
+.artisans-categorie__title {
+  color: var(--primary);
+  font-size: var(--h1-size);
+  font-weight: bold;
+  text-align: center;
+  padding-top: 72px;
+  padding-bottom: 30px;
+}
