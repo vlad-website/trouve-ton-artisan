@@ -1,24 +1,47 @@
-.header {
-    background: var(--primary-light);
-    padding: 15px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #eee;
+.tta-navbar {
+  background-color: var(--primary-light);
 }
 
-.header_logo {
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--primary);
+.tta-navbar .nav-link,
+.tta-navbar .navbar-brand {
+  color: var(--primary-blue);
+  font-weight: 500;
 }
 
-.header_nav a {
-    text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 500;
+.tta-navbar .nav-link:hover,
+.tta-navbar .navbar-brand:hover {
+  color: var(--primary-blue);
+  opacity: 0.8;
 }
 
-.header_nav a.active {
-    color: var(--primary);
+
+.tta-search-wrap {
+  position: relative;
+  width: 160px;
+  max-width: 100%;
+}
+
+.tta-search-icon {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-blue);
+  pointer-events: none;
+  font-size: 16px;
+}
+
+.tta-search {
+  padding-right: 10px;
+  padding-left: 6px;
+  border-radius: var(--radius);
+  border: 1px solid var(--text-gris);
+  background: #fff;
+  color: var(--primary-blue);
+  height: 32px;
+}
+
+.tta-search::placeholder {
+  color: var(--text-light);
+  font-size: 12px;
 }
