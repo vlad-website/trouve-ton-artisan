@@ -8,35 +8,74 @@ export default function Header() {
 
     function handleSearch(e) {
         e.preventDefault();
-        const value = term.trim();
-        if (!value) return;
-        navigate(`/recherche?nom=${encodeURIComponent(value)}`);
+        if (!term.trim()) return;
+        navigate(`/recherche?nom=${encodeURIComponent(term)}`);
         setTerm("");
     }
 
     return (
-        <header className="header">
-            <div className="header_logo">Trouve ton artisan</div>
+        <nav className="navbar navbar-expand-lg tta-navbar border-bottom">
+            <div className="container">
 
-            <nav className="header_nav">
-                <NavLink to="/">Accueil</NavLink>
-                <NavLink to="/categories/1">Bâtiment</NavLink>
-                <NavLink to="/categories/2">Services</NavLink>
-                <NavLink to="/categories/3">Fabrication</NavLink>
-                <NavLink to="/categories/4">Alimentation</NavLink>
-            </nav>
+                {/* LOGO */}
+                <NavLink className="navbar-brand d-flex align-items-center" href="/">
+                    <img
+                        src="/images/Logo.png"
+                        alt="Trouve ton artisan"
+                        height="50"
+                        className="d-inline-block align-top"
+                    />
+                </NavLink>
 
-            <form className="header_search" onSubmit={handleSearch}>
-                <input
-                    type="search"
-                    placeholder="Rechercher un artisan"
-                    className="search__input"
-                    value={term}
-                    onChange={(e) => setTerm(e.target.value)}
-                    aria-label="Rechercher un artisan par nom"
-                />
-                <span className="search__icon">🔍</span>
-            </form>
-        </header>
+                {/* BURGER */}
+                <button
+                    className="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainNavbar"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+
+                {/* MENU */}
+                <div className="collapse navbar-collapse" id="mainNavbar">
+                    <div className="navbar-nav ms-auto align-items-lg-center">
+
+                        <NavLink className="nav-link" to="/">
+                            Accueil
+                        </NavLink>
+                        <NavLink className="nav-link" to="/categories/1">
+                            Bâtiment
+                        </NavLink>
+                        <NavLink className="nav-link" to="/categories/2">
+                            Services
+                        </NavLink>
+                        <NavLink className="nav-link" to="/categories/3">
+                        Fabrication
+                        </NavLink>
+                        <NavLink className="nav-link" to="/categories/4">
+                        Alimentation
+                        </NavLink>
+
+                        {/* SEARCH */}
+                        <form className="d-flex ms-lg-3 mt-3 mt-lg-0" role="search" onSubmit={handleSearch}>
+                            <div className="tta-search-wrap">
+                                <input
+                                className="form-control tta-search"
+                                type="search"
+                                placeholder="Rechercher un artisan"
+                                aria-label="Rechercher un artisan"
+                                value={term}
+                                onChange={(e) => setTerm(e.target.value)}
+                                />
+                                <span className="tta-search-icon" aria-hidden="true">🔍</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
     );
 }
