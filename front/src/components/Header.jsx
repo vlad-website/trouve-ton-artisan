@@ -30,10 +30,12 @@ export default function Header() {
                 <input
                     type="search"
                     placeholder="Rechercher un artisan"
+                    className="search__input"
                     value={term}
                     onChange={(e) => setTerm(e.target.value)}
                     aria-label="Rechercher un artisan par nom"
                 />
+                <span className="search__icon">🔍</span>
             </form>
         </header>
     );
