@@ -1,6 +1,19 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useState } from "react";
+
 
 export default function Header() {
+    const [term, setTerm] = useState("");
+    const navigate = useNavigate();
+
+    function handleSearch(e) {
+        e.preventDefault();
+        const value = term.trim();
+        if (!value) return;
+        navigate(`/recherche?nom=${encodeURIComponent(value)}`);
+        setTerm("");
+    }
+
     return (
         <header className="header">
             <div className="header_logo">Trouve ton artisan</div>
@@ -12,6 +25,16 @@ export default function Header() {
                 <NavLink to="/categories/3">Fabrication</NavLink>
                 <NavLink to="/categories/4">Alimentation</NavLink>
             </nav>
+
+            <form className="header_search" onSubmit={handleSearch}>
+                <input
+                    type="search"
+                    placeholder="Rechercher un artisan"
+                    value={term}
+                    onChange={(e) => setTerm(e.target.value)}
+                    aria-label="Rechercher un artisan par nom"
+                />
+            </form>
         </header>
     );
 }
