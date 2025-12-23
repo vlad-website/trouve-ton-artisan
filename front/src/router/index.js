@@ -5,6 +5,7 @@ import Home from "../pages/home/Home.jsx";
 import CategorieList from "../pages/categories/CategorieList.jsx";
 import ArtisanList from "../pages/artisans/ArtisanList.jsx";
 import ArtisanDetail from "../pages/artisans/ArtisanDetail.jsx";
+import SearchPage from "../pages/SearchPage.jsx";
 
 const router = createBrowserRouter([
     {
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
             { path: "categories", element: <CategorieList /> },
             { path: "categories/:id", element: <ArtisanList /> },
             { path: "artisans/:id", element: <ArtisanDetail /> },
+            { path: "recherche", element: <SearchPage /> },
         ],
     },
 ]);
