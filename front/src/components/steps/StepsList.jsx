@@ -1,4 +1,3 @@
-import "../../styles/steps.css";
 import StepItem from "./StepItem";
 
 export default function StepsList() {

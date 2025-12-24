@@ -6,7 +6,6 @@ import ContactForm from "../../components/ContactForm"
 
 import StarRating from "../../components/StarRating";
 
-import "../../styles/artisan-detail.css";
 
 export default function ArtisanDetail() {
   const { id } = useParams();

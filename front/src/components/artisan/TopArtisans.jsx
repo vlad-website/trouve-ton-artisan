@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { getTopArtisans } from "../../services/api";
 import ArtisanCard from "./ArtisanCard";
 
-import "../../styles/artisans.css"
 
 export default function TopArtisans() {
 
