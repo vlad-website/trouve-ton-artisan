@@ -4,13 +4,13 @@
 
 .tta-navbar .nav-link,
 .tta-navbar .navbar-brand {
-  color: var(--primary-blue);
+  color: var(--primary);
   font-weight: 500;
 }
 
 .tta-navbar .nav-link:hover,
 .tta-navbar .navbar-brand:hover {
-  color: var(--primary-blue);
+  color: var(--primary-bleu);
   opacity: 0.8;
 }
 
