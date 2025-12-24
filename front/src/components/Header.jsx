@@ -1,5 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useEffect } from "react";
 
 
 export default function Header() {
@@ -11,7 +12,40 @@ export default function Header() {
         if (!term.trim()) return;
         navigate(`/recherche?nom=${encodeURIComponent(term)}`);
         setTerm("");
+        closeMenu();
     }
+
+    
+    function closeMenu() {
+        const menu = document.getElementById("mainNavbar");
+
+        if (menu && menu.classList.contains("show")) {
+        menu.classList.remove("show");
+        }
+    }
+
+    useEffect(() => {
+        function handleClickOutside(event) {
+            const menu = document.getElementById("mainNavbar");
+            const toggle = document.querySelector(".navbar-toggler");
+
+            if (
+            menu &&
+            menu.classList.contains("show") &&
+            !menu.contains(event.target) &&
+            !toggle.contains(event.target)
+            ) {
+            menu.classList.remove("show");
+            }
+        }
+
+        document.addEventListener("click", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("click", handleClickOutside);
+        };
+    }, []);
+
 
     return (
         <nav className="navbar navbar-expand-lg tta-navbar border-bottom">
@@ -43,19 +77,19 @@ export default function Header() {
                 <div className="collapse navbar-collapse" id="mainNavbar">
                     <div className="navbar-nav ms-auto align-items-lg-center">
 
-                        <NavLink className="nav-link" to="/">
+                        <NavLink className="nav-link" to="/" onClick={closeMenu}>
                             Accueil
                         </NavLink>
-                        <NavLink className="nav-link" to="/categories/1">
+                        <NavLink className="nav-link" to="/categories/1" onClick={closeMenu}>
                             Bâtiment
                         </NavLink>
-                        <NavLink className="nav-link" to="/categories/2">
+                        <NavLink className="nav-link" to="/categories/2" onClick={closeMenu}>
                             Services
                         </NavLink>
-                        <NavLink className="nav-link" to="/categories/3">
+                        <NavLink className="nav-link" to="/categories/3" onClick={closeMenu}>
                         Fabrication
                         </NavLink>
-                        <NavLink className="nav-link" to="/categories/4">
+                        <NavLink className="nav-link" to="/categories/4" onClick={closeMenu}>
                         Alimentation
                         </NavLink>
 

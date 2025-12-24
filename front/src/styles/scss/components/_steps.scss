@@ -1,6 +1,6 @@
 .steps {
     width: 100%;
-    margin: 40px 0;
+    margin: 100px 0;
     display: block;
 }
 
@@ -8,6 +8,7 @@
     max-width: 900px;
     margin: 0 auto;
     width: 100%;
+    padding-top: 50px;
 }
 
 .steps_title {
@@ -17,7 +18,7 @@
 
 .steps_list {
     display: grid;
-    gap: 16px;
+    gap: 30px;
 
     max-width: 1000px;
     margin: 0 auto;
@@ -69,6 +70,7 @@
     .step {
         flex-direction: column;
         align-items: flex-start;
+        gap: 10px;
     }
 
     .step_left {
@@ -77,6 +79,11 @@
 
     .step_right {
         align-self: flex-end;
-        font-size: 24px;
+        font-size: 32px;
+    }
+
+    .step_text {
+        padding: 0;
+        margin: 0;
     }
 }
