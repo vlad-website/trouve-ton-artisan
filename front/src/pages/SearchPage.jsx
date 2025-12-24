@@ -4,7 +4,6 @@ import { useSearchParams } from "react-router-dom";
 import { searchArtisans } from "../services/api"
 import ArtisanCard from "../components/artisan/ArtisanCard";
 
-import "../styles/search.css";
 
 export default function SearchPage() {
     const [searchParams] = useSearchParams();

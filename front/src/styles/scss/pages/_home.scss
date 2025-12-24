@@ -1,0 +1,46 @@
+.home {
+    width: 100%;
+}
+
+.home_title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 26px;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.step {
+    background: var(--primary-light);
+    padding: 20px;
+    border-radius: var(--radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.steps_title {
+    color: var(--primary);
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.step_number {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.artisans_section_title {
+    text-align: center;
+    background: var(--primary);
+    color: white;
+    padding: 10px;
+    border-radius: var(--radius);
+    margin-bottom: 30px;
+}

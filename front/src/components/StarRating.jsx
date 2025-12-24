@@ -1,4 +1,4 @@
-import "../styles/stars.css";
+
 
 export default function StarRating({ value }) {
     const rating = Number(value) || 0;

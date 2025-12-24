@@ -1,10 +1,13 @@
 /* ABSTRACTS */
 @use "abstracts/variables";
 @use "abstracts/mixins";
+@use "abstracts/global";
 
 /* BASE */
 @use "base/reset";
 @use "base/typography";
+@use "base/fonts";
+@use "base/index";
 
 /* COMPONENTS */
 @use "components/header";
@@ -12,6 +15,9 @@
 @use "components/cards";
 @use "components/search" as searchComponent;
 @use "components/layout";
+@use "components/contact-form";
+@use "components/stars";
+@use "components/steps";
 
 /* PAGES */
 @use "pages/home";
