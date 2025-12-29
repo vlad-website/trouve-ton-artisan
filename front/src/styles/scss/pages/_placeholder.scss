@@ -1,0 +1,44 @@
+.placeholder-page {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.placeholder-page__image {
+    max-width: 420px;
+    width: 100%;
+    margin-bottom: 32px;
+    border-radius: var(--radius);
+}
+
+.placeholder-page__title {
+    font-size: 28px;
+    color: var(--primary);
+    margin-bottom: 60px;
+}
+
+.placeholder-page__subtitle {
+    font-size: 16px;
+    color: var(--text-gris);
+    margin-bottom: 28px;
+    max-width: 420px;
+}
+
+.placeholder-page__btn {
+    padding: 10px 30px;
+    border-radius: var(--radius);
+    color: var(--primary-light);
+    background-color: var(--primary-bleu);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.placeholder-page__btn:hover {
+    background: var(--primary);
+    color: white;
+}
