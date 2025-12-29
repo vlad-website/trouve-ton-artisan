@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getOneArtisan } from "../../services/api";
+import { Navigate } from "react-router-dom";
 
 import ContactForm from "../../components/ContactForm"
 
@@ -11,18 +12,30 @@ export default function ArtisanDetail() {
   const { id } = useParams();
 
   const [artisan, setArtisan] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     loadOneArtisan(id);
   }, [id]);
 
   async function loadOneArtisan(artisanId) {
+    try {
       const data = await getOneArtisan(artisanId);
       setArtisan(data);
+    } catch (error) {
+      setArtisan(null);
+    } finally {
+      setLoading(false);
+    }
+
   }
 
-  if (!artisan) {
-    return <p>Chargement...</p>;
+  if (loading) {
+    return <p>Chargement...</p>
+  }
+
+  if (!artisan || !artisan.id_artisan) {
+    return <Navigate to="/404" replace />;
   }
 
   return (
