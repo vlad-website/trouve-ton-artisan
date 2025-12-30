@@ -75,5 +75,24 @@ module.exports = {
         }
       ]
     });
+  },
+
+  getByCategorieSlug: async (slug) => {
+    return await Artisan.findAll({
+      include: [
+        {
+          model: Specialite,
+          required: true,
+          include: [
+            {
+              model: Categorie,
+              required: true,
+              where: { slug }
+            }
+          ]
+        }
+      ],
+      order: [["note", "DESC"]]
+    });
   }
 };
