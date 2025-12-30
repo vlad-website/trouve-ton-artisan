@@ -1,30 +1,23 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Navigate } from "react-router-dom";
 
 import { getArtisansByCategorie } from "../../services/api";
 import ArtisanCard from "../../components/artisan/ArtisanCard";
-
+import { Navigate } from "react-router-dom";
 
 export default function ArtisanList() {
-  const { id } = useParams();
-  const CATEGORIES = {
-    1: "Artisans du bâtiment",
-    2: "Artisans des services",
-    3: "Artisans de la fabrication",
-    4: "Artisans de l'alimentation",
-  };
+  const { slug } = useParams();
 
   const [artisans, setArtisans] = useState([]);
   const [loading, setLoading] = useState(true);
   
   useEffect(() => {
-      loadArtisansByCategorie(id);
-  }, [id]);
+      loadArtisansByCategorie(slug);
+  }, [slug]);
   
-  async function loadArtisansByCategorie(categorieId) {
+  async function loadArtisansByCategorie(categorieSlug) {
     try {
-      const data = await getArtisansByCategorie(categorieId);
+      const data = await getArtisansByCategorie(categorieSlug);
       setArtisans(data);
     } catch (error) {
       setArtisans([]);
@@ -43,7 +36,7 @@ export default function ArtisanList() {
 
   return (
     <section className="artisans-categorie">
-      <h1 className="artisans-categorie__title">{CATEGORIES[id]}</h1>
+      <h1 className="artisans-categorie__title">Artisans - {slug}</h1>
 
       <div className="top-artisans_grid">
         {artisans.map((art) => (
