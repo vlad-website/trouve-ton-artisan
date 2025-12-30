@@ -1,21 +1,38 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import { getCategories } from "../services/api";
 
 
 export default function Header() {
+    
+    /* STATE */
     const [term, setTerm] = useState("");
+    const [categories, setCategories] = useState([]);
+    
     const navigate = useNavigate();
 
+    /* DATA */
+    useEffect(() => {
+        loadCategories();
+    }, []);
+
+    async function loadCategories() {
+        const data = await getCategories();
+        setCategories(data);
+    }
+
+    /* SEARCH */
     function handleSearch(e) {
         e.preventDefault();
+
         if (!term.trim()) return;
+
         navigate(`/recherche?nom=${encodeURIComponent(term)}`);
         setTerm("");
         closeMenu();
     }
 
-    
+    /* BURGER */
     function closeMenu() {
         const menu = document.getElementById("mainNavbar");
 
@@ -80,18 +97,18 @@ export default function Header() {
                         <NavLink className="nav-link" to="/" onClick={closeMenu}>
                             Accueil
                         </NavLink>
-                        <NavLink className="nav-link" to="/categories/1" onClick={closeMenu}>
-                            Bâtiment
-                        </NavLink>
-                        <NavLink className="nav-link" to="/categories/2" onClick={closeMenu}>
-                            Services
-                        </NavLink>
-                        <NavLink className="nav-link" to="/categories/3" onClick={closeMenu}>
-                        Fabrication
-                        </NavLink>
-                        <NavLink className="nav-link" to="/categories/4" onClick={closeMenu}>
-                        Alimentation
-                        </NavLink>
+                        
+                        {/* CATEGORIES */}
+                        {categories.map((cat) => (
+                            <NavLink
+                                key={cat.id_categorie}
+                                className="nav-link"
+                                to={`/categories/${cat.slug}`}
+                                onClick={closeMenu}
+                            >
+                                {cat.nom}
+                            </NavLink>
+                        ))}
 
                         {/* SEARCH */}
                         <form className="d-flex ms-lg-3 mt-3 mt-lg-0" role="search" onSubmit={handleSearch}>
