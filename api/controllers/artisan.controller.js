@@ -58,3 +58,13 @@ module.exports.search = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+module.exports.getByCategorieSlug = async (req, res) => {
+  try {
+    const { slug } = req.params;
+    const artisans = await artisanService.getByCategorieSlug(slug);
+    res.status(200).json(artisans);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
