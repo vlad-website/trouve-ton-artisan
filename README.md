@@ -43,17 +43,21 @@ Ce projet a été réalisé dans le cadre d’un projet pédagogique.
 - Bootstrap
 - Sass (SCSS)
 - JavaScript (ES6)
+- HTML5 / CSS3
+- Accessibilité
 
 ### Backend
 - Node.js
 - Express
 - Sequelize
-- MySQL
+- MySQL (MariaDB compatible)
 
 ### Outils
 - Git & GitHub
 - Visual Studio Code
 - Figma
+- Render (déploiement frontend & API)
+- AlwaysData (base de données MySQL)
 
 ---
 
@@ -104,9 +108,9 @@ Création de la base de données
 Insertion des données de test (catégories, spécialités, artisans)
 
 🌍 Déploiement
-Frontend : (URL du site en ligne)
+Frontend : https://trouve-ton-artisan-84vw.onrender.com/
 
-Backend / API : (URL de l’API)
+Backend / API : https://trouve-ton-artisan-api-qmqf.onrender.com
 
 🔐 Sécurité (bonnes pratiques)
 Validation des données côté backend
