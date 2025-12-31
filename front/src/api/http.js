@@ -1,9 +1,7 @@
-const API_URL = "http://localhost:5000";
+import axios from "axios";
 
-export async function apiGet(path) {
-  const response = await fetch(API_URL + path);
-  if (!response.ok) {
-    throw new Error("API error: " + response.status);
-  }
-  return response.json();
-}
+const api = axios.create({
+  baseURL: process.env.REACT_APP_API_URL,
+});
+
+export default api;
